@@ -47,6 +47,9 @@
 
 .ck-input{
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;   /* ★ 重要 */
+  min-width: 0;             /* ★ Android対策 */
   font-size: 16px;
   padding: 12px 12px;
   border-radius: 12px;
