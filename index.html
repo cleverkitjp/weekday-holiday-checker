@@ -12,16 +12,16 @@
     gtag('config', 'G-F6517NYNFF');
   </script>
 
-  <!-- AdSense (slot is set in footer.html; keep client script here) -->
+  <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9727255179923866"
      crossorigin="anonymous"></script>
 
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>曜日・祝日 判定ツール｜営業日計算の前段チェック</title>
-  <meta name="description" content="日付を入れるだけで「曜日」「土日/平日」「祝日名」を即判定。日本の祝日判定は外部APIを参照し、失敗時も曜日/土日は即答します。" />
+  <title>曜日・祝日・営業日 判定ツール</title>
+  <meta name="description" content="日付を入れるだけで「曜日」「暦日（土日/平日）」「祝日」「営業日」「今日からの差」「年初/年度の週番号」を即判定（日本時間）。" />
 
-  <meta property="og:title" content="曜日・祝日 判定ツール" />
-  <meta property="og:description" content="日付を入れるだけで曜日・土日/平日・祝日名を即判定（日本）。" />
+  <meta property="og:title" content="曜日・祝日・営業日 判定ツール" />
+  <meta property="og:description" content="曜日・祝日・営業日・今日からの差・週番号を1画面で即判定（日本時間）。" />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="https://cleverkitjp.github.io/common.css">
@@ -31,8 +31,8 @@
 <body>
   <main class="ck-wrap">
     <header class="ck-head">
-      <h1 class="ck-title">曜日・祝日 判定ツール</h1>
-      <p class="ck-subtitle">日付を入れるだけで即答（祝日は外部API参照／失敗時も曜日と土日判定は即答）</p>
+      <h1 class="ck-title">曜日・祝日・営業日 判定ツール</h1>
+      <p class="ck-subtitle">日本時間で「今日」を初期セット。祝日判定は外部API参照（失敗時も暦日/曜日は即答）。</p>
     </header>
 
     <section class="ck-card" aria-label="日付入力">
@@ -47,10 +47,9 @@
       </div>
 
       <details class="ck-help">
-        <summary>補足（通信が必要？）</summary>
+        <summary>補足</summary>
         <div class="ck-help-body">
-          <p>祝日の判定は外部APIを参照します。通信に失敗した場合は「祝日判定：取得失敗」と表示しますが、曜日と土日/平日は端末内で即表示します。</p>
-          <p>同じ日付の判定結果は端末に保存し、再取得を減らします。</p>
+          <p>「今日」は日本時間（Asia/Tokyo）を採用します。祝日判定は外部APIを参照し、通信に失敗した場合は「祝日：取得失敗」と表示します（曜日/暦日は端末内で即表示）。</p>
         </div>
       </details>
     </section>
@@ -68,7 +67,12 @@
         </div>
 
         <div class="ck-row">
-          <div class="ck-row-label">祝日判定</div>
+          <div class="ck-row-label">暦日</div>
+          <div class="ck-row-value" id="calendarDayText">—</div>
+        </div>
+
+        <div class="ck-row">
+          <div class="ck-row-label">祝日</div>
           <div class="ck-row-value" id="holidayText">—</div>
         </div>
 
@@ -76,14 +80,29 @@
           <div class="ck-row-label">祝日名</div>
           <div class="ck-row-value" id="holidayNameText">—</div>
         </div>
+
+        <div class="ck-row">
+          <div class="ck-row-label">営業日</div>
+          <div class="ck-row-value" id="businessDayText">—</div>
+        </div>
+
+        <div class="ck-row">
+          <div class="ck-row-label">今日から</div>
+          <div class="ck-row-value" id="diffText">—</div>
+        </div>
+
+        <div class="ck-row">
+          <div class="ck-row-label">年初週</div>
+          <div class="ck-row-value" id="yearWeekText">—</div>
+        </div>
+
+        <div class="ck-row">
+          <div class="ck-row-label">年度週</div>
+          <div class="ck-row-value" id="fiscalWeekText">—</div>
+        </div>
       </div>
 
       <div class="ck-note" id="noteText" aria-live="polite"></div>
-    </section>
-
-    <section class="ck-card ck-mini" aria-label="次の拡張">
-      <div class="ck-mini-title">次の拡張（営業日計算）</div>
-      <div class="ck-mini-text">MVP完了後、「◯営業日後/前（祝日＋土日除外）」を追加できます（起算日・0営業日などの仕様は別途確定）。</div>
     </section>
   </main>
 
