@@ -1,0 +1,218 @@
+/* Tool-specific styles (common.css is loaded first) */
+
+:root{
+  --ck-accent: #2b7cff;       /* cold */
+  --ck-accent-2: #1f5fd6;
+  --ck-ink: #0f172a;
+  --ck-muted: rgba(15, 23, 42, .68);
+  --ck-border: rgba(15, 23, 42, .10);
+  --ck-surface: rgba(255,255,255,.92);
+}
+
+.ck-wrap{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 14px 12px 28px;
+}
+
+.ck-head{
+  padding: 8px 2px 12px;
+}
+
+.ck-title{
+  font-size: 20px;
+  line-height: 1.25;
+  margin: 0 0 6px;
+  color: var(--ck-ink);
+  letter-spacing: .2px;
+}
+
+.ck-subtitle{
+  margin: 0;
+  font-size: 13px;
+  color: var(--ck-muted);
+}
+
+.ck-card{
+  background: var(--ck-surface);
+  border: 1px solid var(--ck-border);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, .06);
+  margin: 12px 0;
+}
+
+.ck-field{
+  display: grid;
+  gap: 8px;
+}
+
+.ck-label{
+  font-size: 13px;
+  color: var(--ck-muted);
+}
+
+.ck-input{
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--ck-border);
+  background: #fff;
+  color: var(--ck-ink);
+  outline: none;
+}
+
+.ck-input:focus{
+  border-color: rgba(43, 124, 255, .55);
+  box-shadow: 0 0 0 4px rgba(43, 124, 255, .12);
+}
+
+.ck-actions{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.ck-btn{
+  border: 1px solid var(--ck-border);
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 12px;
+  font-size: 15px;
+  color: var(--ck-ink);
+  min-height: 46px;
+}
+
+.ck-btn:active{
+  transform: translateY(1px);
+}
+
+.ck-btn-primary{
+  background: linear-gradient(180deg, rgba(43,124,255,.98), rgba(31,95,214,.98));
+  color: #fff;
+  border-color: rgba(43, 124, 255, .22);
+}
+
+.ck-help{
+  margin-top: 10px;
+  border-top: 1px dashed rgba(15, 23, 42, .14);
+  padding-top: 10px;
+}
+
+.ck-help > summary{
+  cursor: pointer;
+  font-size: 13px;
+  color: rgba(31, 95, 214, .95);
+  list-style: none;
+}
+
+.ck-help > summary::-webkit-details-marker{ display:none; }
+
+.ck-help-body{
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--ck-muted);
+  line-height: 1.6;
+}
+
+.ck-result{
+  padding-top: 12px;
+}
+
+.ck-result-top{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(15, 23, 42, .08);
+}
+
+.ck-date{
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .4px;
+  color: rgba(15, 23, 42, .80);
+  font-size: 13px;
+}
+
+.ck-badges{
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.ck-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(15, 23, 42, .12);
+  background: rgba(255,255,255,.75);
+  color: rgba(15, 23, 42, .82);
+  white-space: nowrap;
+}
+
+.ck-badge-accent{
+  border-color: rgba(43,124,255,.22);
+  background: rgba(43,124,255,.10);
+  color: rgba(31,95,214,.98);
+}
+
+.ck-badge-warn{
+  border-color: rgba(255, 99, 71, .22);
+  background: rgba(255, 99, 71, .10);
+  color: rgba(190, 40, 20, .98);
+}
+
+.ck-result-main{
+  padding-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.ck-row{
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.ck-row-label{
+  font-size: 12px;
+  color: var(--ck-muted);
+  padding-top: 2px;
+}
+
+.ck-row-value{
+  font-size: 18px;
+  color: var(--ck-ink);
+  letter-spacing: .2px;
+}
+
+.ck-note{
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(15, 23, 42, .62);
+  min-height: 1.2em;
+}
+
+.ck-mini{
+  padding: 12px 14px;
+}
+
+.ck-mini-title{
+  font-size: 13px;
+  color: rgba(15, 23, 42, .78);
+  margin-bottom: 6px;
+}
+
+.ck-mini-text{
+  font-size: 12px;
+  color: rgba(15, 23, 42, .62);
+  line-height: 1.55;
+}
