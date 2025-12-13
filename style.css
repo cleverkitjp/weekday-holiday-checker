@@ -1,7 +1,5 @@
-/* Tool-specific styles (common.css is loaded first) */
-
 :root{
-  --ck-accent: #2b7cff;       /* cold */
+  --ck-accent: #2b7cff;
   --ck-accent-2: #1f5fd6;
   --ck-ink: #0f172a;
   --ck-muted: rgba(15, 23, 42, .68);
@@ -15,9 +13,7 @@
   padding: 14px 12px 28px;
 }
 
-.ck-head{
-  padding: 8px 2px 12px;
-}
+.ck-head{ padding: 8px 2px 12px; }
 
 .ck-title{
   font-size: 20px;
@@ -42,10 +38,7 @@
   margin: 12px 0;
 }
 
-.ck-field{
-  display: grid;
-  gap: 8px;
-}
+.ck-field{ display: grid; gap: 8px; }
 
 .ck-label{
   font-size: 13px;
@@ -85,9 +78,7 @@
   min-height: 46px;
 }
 
-.ck-btn:active{
-  transform: translateY(1px);
-}
+.ck-btn:active{ transform: translateY(1px); }
 
 .ck-btn-primary{
   background: linear-gradient(180deg, rgba(43,124,255,.98), rgba(31,95,214,.98));
@@ -107,7 +98,6 @@
   color: rgba(31, 95, 214, .95);
   list-style: none;
 }
-
 .ck-help > summary::-webkit-details-marker{ display:none; }
 
 .ck-help-body{
@@ -117,9 +107,7 @@
   line-height: 1.6;
 }
 
-.ck-result{
-  padding-top: 12px;
-}
+.ck-result{ padding-top: 12px; }
 
 .ck-result-top{
   display: flex;
@@ -147,7 +135,6 @@
 .ck-badge{
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 12px;
@@ -189,9 +176,10 @@
 }
 
 .ck-row-value{
-  font-size: 18px;
+  font-size: 16px;
   color: var(--ck-ink);
   letter-spacing: .2px;
+  line-height: 1.35;
 }
 
 .ck-note{
@@ -199,20 +187,4 @@
   font-size: 12px;
   color: rgba(15, 23, 42, .62);
   min-height: 1.2em;
-}
-
-.ck-mini{
-  padding: 12px 14px;
-}
-
-.ck-mini-title{
-  font-size: 13px;
-  color: rgba(15, 23, 42, .78);
-  margin-bottom: 6px;
-}
-
-.ck-mini-text{
-  font-size: 12px;
-  color: rgba(15, 23, 42, .62);
-  line-height: 1.55;
 }
